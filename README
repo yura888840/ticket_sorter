@@ -1,0 +1,21 @@
+
+Before executing script you should run:
+```
+composer install
+```
+
+After this, to run unit tests, from root of the project run :
+```
+./vendor/bin/phpunit
+```
+
+To execute script, you should run
+```
+php index.php
+```
+
+Ho this should work :
+You can give as input json.
+
+By next step, you can transform json to objects of type AbstractVehicleBoardingCard
+
