@@ -19,3 +19,25 @@ You can give as input json.
 
 By next step, you can transform json to objects of type AbstractVehicleBoardingCard
 
+
+For example, add the code :
+
+```
+if ($_SERVER['REQUEST_METHOD'] !== 'GET' || empty($_GET['data'])) {
+    throw new Exception('Not allowed');
+}
+
+$data = json_decode($_GET['data'], true);
+
+$sorter = new Sorter();
+
+foreach ($data as $objectData) {
+    $className = $objectData['type'];
+
+    $from   = $objectData['from'];
+    $to     = $objectData['to'];
+    $info   = $objectData['info'];
+
+    $sorter->addBoardingCard(new $className($from, $to, $info));
+}
+```
